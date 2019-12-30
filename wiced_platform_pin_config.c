@@ -28,7 +28,7 @@
  * Please note that its mandatory to name this file in the format "app_name_pin_config.c"
  */
 
-/*------ cyw20719b1 module pad define ------
+/*------ cybt423028(cyw20719b1) module pad define wiced_platform_pin_config.c ------
 01 GND
 02 HOST_WAKE
 03 UART_RXD         programming
@@ -63,6 +63,7 @@
 #include "wiced_platform.h"
 
 /* all the pins available on this platform and their chosen functionality */
+#if (MDU==CYBT423028)   // please clean and make targer : Zenitron_BT_AMP-CYBT_423028_EVAL download MDU=CYBT423028
 const wiced_platform_gpio_t platform_gpio_pins[] =
     {
           [PLATFORM_GPIO_0 ] = {WICED_P00, WICED_GPIO              },
@@ -82,6 +83,29 @@ const wiced_platform_gpio_t platform_gpio_pins[] =
           [PLATFORM_GPIO_14] = {WICED_P34, WICED_GPIO              },
           [PLATFORM_GPIO_15] = {WICED_P38, WICED_UART_2_CTS        },
     };
+#elif (MDU==CY20719B1)  // please clean and make targer : Zenitron_BT_AMP-CYW920719Q40EVB_01 download MDU=CY20719B1
+const wiced_platform_gpio_t platform_gpio_pins[] =
+    {
+        [PLATFORM_GPIO_0 ] = {WICED_P00, WICED_GPIO              },      //Button
+        [PLATFORM_GPIO_1 ] = {WICED_P01, WICED_SPI_1_MISO        },
+//        [PLATFORM_GPIO_2 ] = {WICED_P02, WICED_PCM_OUT_I2S_DO    },
+        [PLATFORM_GPIO_2 ] = {WICED_P02, WICED_GCI_SECI_OUT      },
+        [PLATFORM_GPIO_3 ] = {WICED_P04, WICED_PCM_IN_I2S_DI     },
+        [PLATFORM_GPIO_4 ] = {WICED_P06, WICED_GCI_SECI_IN       },
+        [PLATFORM_GPIO_5 ] = {WICED_P07, WICED_SPI_1_CS          },
+//        [PLATFORM_GPIO_6 ] = {WICED_P10, WICED_GCI_SECI_OUT      },
+        [PLATFORM_GPIO_6 ] = {WICED_P10, WICED_PCM_OUT_I2S_DO    },
+        [PLATFORM_GPIO_7 ] = {WICED_P16, WICED_PCM_CLK_I2S_CLK   },
+        [PLATFORM_GPIO_8 ] = {WICED_P17, WICED_PCM_SYNC_I2S_WS   },
+        [PLATFORM_GPIO_9 ] = {WICED_P26, WICED_GPIO              },      //Default LED 2
+        [PLATFORM_GPIO_10] = {WICED_P25, WICED_I2C_1_SCL         },
+        [PLATFORM_GPIO_11] = {WICED_P28, WICED_SPI_1_MOSI        },      //Optional LED 1
+        [PLATFORM_GPIO_12] = {WICED_P29, WICED_I2C_1_SDA         },
+        [PLATFORM_GPIO_13] = {WICED_P33, WICED_UART_2_TXD        },
+        [PLATFORM_GPIO_14] = {WICED_P34, WICED_UART_2_RXD        },
+        [PLATFORM_GPIO_15] = {WICED_P38, WICED_SPI_1_CLK         },
+    };
+#endif
 /* LED configuration */
 const wiced_platform_led_config_t platform_led[] =
     {

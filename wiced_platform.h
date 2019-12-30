@@ -21,7 +21,7 @@
  *  manufacturer of such system or application assumes  all risk of such use and in doing so agrees 
  * to indemnify Cypress against all liability.
  */
-/* cyw20719b1 module platform.h */
+/* cybt423028(cyw20719b1) module wiced_platform.h */
 #pragma once
 
 #include "wiced.h"

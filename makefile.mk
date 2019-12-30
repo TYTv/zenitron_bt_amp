@@ -50,6 +50,18 @@ else
 C_FLAGS += -DWICED_A2DP_EXT_CODEC=0
 endif
 
+###### define module type ######
+C_FLAGS += -DCYBT423028=1
+C_FLAGS += -DCY20719B1=2
+
+ifeq ($(MDU), CYBT423028)
+C_FLAGS += -DMDU=CYBT423028
+else
+ifeq ($(MDU), CY20719B1)
+C_FLAGS += -DMDU=CY20719B1
+endif
+endif
+
 ########################################################################
 ################ DO NOT MODIFY FILE BELOW THIS LINE ####################
 ########################################################################
