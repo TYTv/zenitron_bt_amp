@@ -45,13 +45,13 @@
 13 P25              peripheral uart txd
 14 P26              peripheral uart rts
 15 P38              peripheral uart cts
-16 P34/P35/P36
-17 P1
+16 P34/P35/P36      i2c sda
+17 P1               i2c scl
 18 P0
 19 P29
 ------
 20 P13/P23/P28
-21 P10/P11 P10
+21 P10/P11
 22 P17
 23 P7               i2s ws
 24 P4               i2s do
@@ -67,7 +67,7 @@
 const wiced_platform_gpio_t platform_gpio_pins[] =
     {
           [PLATFORM_GPIO_0 ] = {WICED_P00, WICED_GPIO              },
-          [PLATFORM_GPIO_1 ] = {WICED_P01, WICED_GPIO              },
+          [PLATFORM_GPIO_1 ] = {WICED_P01, WICED_I2C_1_SCL         },
           [PLATFORM_GPIO_2 ] = {WICED_P02, WICED_GPIO              },      //Button
           [PLATFORM_GPIO_3 ] = {WICED_P04, WICED_PCM_OUT_I2S_DO    },
           [PLATFORM_GPIO_4 ] = {WICED_P06, WICED_GPIO              },      //LED 2
@@ -80,7 +80,7 @@ const wiced_platform_gpio_t platform_gpio_pins[] =
           [PLATFORM_GPIO_11] = {WICED_P28, WICED_GPIO              },
           [PLATFORM_GPIO_12] = {WICED_P29, WICED_GPIO              },
           [PLATFORM_GPIO_13] = {WICED_P33, WICED_UART_2_RXD        },
-          [PLATFORM_GPIO_14] = {WICED_P34, WICED_GPIO              },
+          [PLATFORM_GPIO_14] = {WICED_P34, WICED_I2C_1_SDA         },
           [PLATFORM_GPIO_15] = {WICED_P38, WICED_UART_2_CTS        },
     };
 #elif (MDU==CY20719B1)  // please clean and make targer : Zenitron_BT_AMP-CYW920719Q40EVB_01 download MDU=CY20719B1

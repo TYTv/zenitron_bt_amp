@@ -8,6 +8,7 @@ APP_SRC += wiced_bt_cfg.c
 APP_SRC += a2dp_sink.c
 APP_SRC += a2dp_cfg.c
 APP_SRC += wiced_platform_pin_config.c
+APP_SRC += MA12070P.c
 
 $(NAME)_COMPONENTS   := a2dp_sink_profile.a
 

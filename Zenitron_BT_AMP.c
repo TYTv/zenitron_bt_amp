@@ -34,6 +34,8 @@
 #include "wiced_bt_audio.h"
 #include "a2dp_cfg.h"
 
+#include "MA12070P.h"
+
 /*******************************************************************
  * Constant Definitions
  ******************************************************************/
@@ -137,6 +139,9 @@ void application_start(void)
 
     /* Configure Audio buffer */
     wiced_audio_buffer_initialize (a2dp_sink_audio_buf_config);
+
+    init_ma12070p();
+
 }
 
 /*
